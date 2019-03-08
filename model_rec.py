@@ -183,7 +183,7 @@ class KMeansGenerator(nn.Module):
         model += [nn.LeakyReLU(negative_slope=.2),]
         model += [norm_layer(64),]
 
-        model += [nn.Conv2d(64, k, kernel_size=1, bias=use_bias),]
+        model += [nn.Conv2d(64, 2*k, kernel_size=1, bias=use_bias),]
 
         if(use_tanh):
             model += [nn.Tanh(),]
