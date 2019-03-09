@@ -6,7 +6,7 @@ L = 100
 A = 110
 B = 110
 
-thresh = 1
+thresh = .1
 
 in_gamuts = np.zeros((L+1,2*A+1,2*B+1),dtype='bool')
 
@@ -22,14 +22,17 @@ for ll in range(L+1):
 
 	# convert to rgb and back
 	lab_mods = color.rgb2lab(np.clip(color.lab2rgb(lab_vals),0,1))
+
+	# calculate the difference
 	diffs = np.sqrt(np.sum((lab_vals-lab_mods)**2,axis=2))
+
 	in_gamuts[ll,:,:] = diffs < thresh
 
 np.save('in_gamuts',in_gamuts)
 
-	# for aa in np.arange(-A, A+1):
-	# 	for bb in np.arange(-B, B+1):
-	# 		lab = np.array([1.*ll,1.*aa,1.*bb]).reshape((1,1,3))
-	# 		lab_mod = color.rgb2lab(np.clip(color.lab2rgb(lab),0,1))
-	# 		diff = np.sqrt(np.sum((lab-lab_mod)**2))
-	# 		ingamut[ll,aa,bb] = diff < thresh
+
+import matplotlib.pyplot as plt
+plt.imshow(in_gamuts[80,:,:],extent=[-110,110,110,-110])
+plt.ylabel('a')
+plt.xlabel('b')
+plt.show()
