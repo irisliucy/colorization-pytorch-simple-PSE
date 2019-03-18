@@ -95,7 +95,9 @@ out_orig_lab = np.concatenate((img_orig_l,out_orig_ab),axis=2)
 out_orig_rgb = np.uint8(np.clip(color.lab2rgb(out_orig_lab),0,1)*255)
 cv2.imwrite('./imgs/migrant_mother/output_fullres.png',out_orig_rgb[:,:,::-1])
 
+# ***** COMPUTE UNCERTAINTY *****
 
+out_entropy = -torch.sum(out_class*torch.log(out_class),dim=1,keepdim=True)
 
 
 # ***** COLOR RECOMMENDATION CODE *****

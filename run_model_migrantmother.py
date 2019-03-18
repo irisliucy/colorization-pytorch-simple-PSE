@@ -67,8 +67,8 @@ img_rs_l_norm = (img_rs_lab[:,:,[0]]-l_cent)/l_norm # normalized
 
 # ***** COLOR INPUT POINTS *****
 # initialize blank ab input, mask
-in_ab = np.load('./imgs/migrantmother/im_ab.npy').transpose((1,2,0))
-in_mask = 1.*np.load('./imgs/migrantmother/im_mask.npy').transpose((1,2,0))
+# in_ab = np.load('./imgs/migrantmother/im_ab.npy').transpose((1,2,0))
+# in_mask = 1.*np.load('./imgs/migrantmother/im_mask.npy').transpose((1,2,0))
 # in_ab = np.zeros((H_proc, W_proc, 2))
 # in_mask = np.zeros((H_proc, W_proc, 1))
 
