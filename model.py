@@ -105,6 +105,8 @@ class SIGGRAPHGenerator(nn.Module):
         model_out=[nn.Conv2d(128, 2, kernel_size=1, padding=0, dilation=1, stride=1, bias=use_bias),]
         model_out+=[nn.Tanh()]
 
+        self.subsamp = nn.AvgPool2d(kernel_size=1, stride=2)
+
         self.model1 = nn.Sequential(*model1)
         self.model2 = nn.Sequential(*model2)
         self.model3 = nn.Sequential(*model3)
@@ -130,9 +132,9 @@ class SIGGRAPHGenerator(nn.Module):
 
     def forward(self, input_A, input_B, mask_B):
         conv1_2 = self.model1(torch.cat((input_A,input_B,mask_B),dim=1))
-        conv2_2 = self.model2(conv1_2[:,:,::2,::2])
-        conv3_3 = self.model3(conv2_2[:,:,::2,::2])
-        conv4_3 = self.model4(conv3_3[:,:,::2,::2])
+        conv2_2 = self.model2(self.subsamp(conv1_2))
+        conv3_3 = self.model3(self.subsamp(conv2_2))
+        conv4_3 = self.model4(self.subsamp(conv3_3))
         conv5_3 = self.model5(conv4_3)
         conv6_3 = self.model6(conv5_3)
         conv7_3 = self.model7(conv6_3)
