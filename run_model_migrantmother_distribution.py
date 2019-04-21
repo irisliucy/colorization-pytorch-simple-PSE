@@ -14,7 +14,7 @@ import model_rec as model
 l_norm = 100.
 l_cent = 50.
 ab_norm = 110.
-mask_cent = 0.5
+mask_cent = 0.
 use_gpu = False
 H_proc, W_proc = (256,256) # resolution to process, needs to be multiple of 8
 
@@ -44,7 +44,8 @@ def tens2np(in_tens,use_gpu=True):
 
 # ***** LOAD MODEL *****
 colorizer = model.SIGGRAPHGenerator()
-colorizer.load_state_dict(torch.load('./models/net_G_19_03_04_trained1ep.pth'))
+# colorizer.load_state_dict(torch.load('./models/net_G_19_03_04_trained1ep.pth'))
+colorizer.load_state_dict(torch.load('./models/caffemodel_mask01_rec.pth'))
 if(use_gpu):
 	colorizer.cuda()
 else:
