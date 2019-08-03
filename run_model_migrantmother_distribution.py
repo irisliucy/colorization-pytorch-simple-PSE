@@ -44,8 +44,7 @@ def tens2np(in_tens,use_gpu=True):
 
 # ***** LOAD MODEL *****
 colorizer = model.SIGGRAPHGenerator()
-# colorizer.load_state_dict(torch.load('./models/net_G_19_03_04_trained1ep.pth'))
-colorizer.load_state_dict(torch.load('./models/caffemodel_mask01_rec.pth'))
+colorizer.load_state_dict(torch.load('./models/caffemodel_rec_net_G.pth'))
 if(use_gpu):
 	colorizer.cuda()
 else:
@@ -97,7 +96,6 @@ out_orig_rgb = np.uint8(np.clip(color.lab2rgb(out_orig_lab),0,1)*255)
 cv2.imwrite('./imgs/migrant_mother/output_fullres.png',out_orig_rgb[:,:,::-1])
 
 # ***** COMPUTE UNCERTAINTY *****
-
 out_entropy = -torch.sum(out_class*torch.log(out_class),dim=1,keepdim=True)
 
 
