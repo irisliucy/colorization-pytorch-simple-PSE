@@ -14,9 +14,9 @@ python run_model.py
 python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_path imgs/migrant_mother/im_mask.npy
 ```
 
-<img src='resources/example_auto.png' align="left" width=750>
+<img src='resources/example_auto.png' align="left">
 
-<img src='resources/example_inter.png' align="left" width=750>
+<img src='resources/example_inter.png' align="left">
 
 
 ### DRN_D_22 model
