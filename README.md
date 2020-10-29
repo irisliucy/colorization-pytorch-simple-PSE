@@ -2,9 +2,7 @@
 
 This is a pytorch implementation of interactive colorization. These weights are in [Photoshop Elements 2020](http://video.tv.adobe.com/v/28291) and in [Photoshop Neural Filters](https://www.youtube.com/watch?v=iJs_nqu8P08).
 
-Download [caffemodel](https://adobe-my.sharepoint.com/personal/rizhang_adobe_com/_layouts/15/guestaccess.aspx?guestaccesstoken=%2FgYfjXcZyCI4LOa%2B%2FHQrNTIH7m6gZooZBvrmmEjmmjc%3D&docid=2_0c3194addb7254cceb54c4dcca53adc53&rev=1&e=M94V1G) into the `weights` directory.
-
-`caffemodel` is from our [SIGGRAPH 2017](https://richzhang.github.io/ideepcolor/) paper. It was trained in caffe, with weights converted to pytorch. These are the weights in PSE 2020 and Neural Filters.
+Download [caffemodel](https://adobe-my.sharepoint.com/personal/rizhang_adobe_com/_layouts/15/guestaccess.aspx?guestaccesstoken=%2FgYfjXcZyCI4LOa%2B%2FHQrNTIH7m6gZooZBvrmmEjmmjc%3D&docid=2_0c3194addb7254cceb54c4dcca53adc53&rev=1&e=M94V1G) into the `weights` directory. It is from our [SIGGRAPH 2017](https://richzhang.github.io/ideepcolor/) paper. It was trained in caffe, with weights converted to pytorch. These are the weights in PSE 2020 and Neural Filters.
 
 ### "Migrant Mother" with automatic colorization
 
