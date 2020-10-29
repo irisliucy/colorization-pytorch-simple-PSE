@@ -27,47 +27,47 @@ python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_pat
 
 Hint mask | Color hint | Input | Output
 
-![](imgs/cup_with_dist_190417_013831/input_mask.png =200x)
+
 ![](imgs/cup_with_dist_190417_013831/input_ab.png =200x)
 ![](imgs/cup_with_dist_190417_013831/input_fullres.png =200x)
 ![](imgs/cup_with_dist_190417_013831/ours_fullres.png =200x)
   
-![](imgs/cup_with_dist_190417_013901/input_mask.png =200x)
+
 ![](imgs/cup_with_dist_190417_013901/input_ab.png =200x)
 ![](imgs/cup_with_dist_190417_013901/input_fullres.png =200x)
 ![](imgs/cup_with_dist_190417_013901/ours_fullres.png =200x)
   
-![](imgs/image013_with_dist_190417_015719/input_mask.png =200x)
+
 ![](imgs/image013_with_dist_190417_015719/input_ab.png =200x)
 ![](imgs/image013_with_dist_190417_015719/input_fullres.png =200x)
 ![](imgs/image013_with_dist_190417_015719/ours_fullres.png =200x)
   
-![](imgs/image013_with_dist_190417_020208/input_mask.png =200x)
+
 ![](imgs/image013_with_dist_190417_020208/input_ab.png =200x)
 ![](imgs/image013_with_dist_190417_020208/input_fullres.png =200x)
 ![](imgs/image013_with_dist_190417_020208/ours_fullres.png =200x)
   
-![](imgs/image015_with_dist_190417_020225/input_mask.png =200x)
+
 ![](imgs/image015_with_dist_190417_020225/input_ab.png =200x)
 ![](imgs/image015_with_dist_190417_020225/input_fullres.png =200x)
 ![](imgs/image015_with_dist_190417_020225/ours_fullres.png =200x)
   
-![](imgs/image015_with_dist_190417_020612/input_mask.png =200x)
+
 ![](imgs/image015_with_dist_190417_020612/input_ab.png =200x)
 ![](imgs/image015_with_dist_190417_020612/input_fullres.png =200x)
 ![](imgs/image015_with_dist_190417_020612/ours_fullres.png =200x)
   
-![](imgs/image017_with_dist_190417_020632/input_mask.png =200x)
+
 ![](imgs/image017_with_dist_190417_020632/input_ab.png =200x)
 ![](imgs/image017_with_dist_190417_020632/input_fullres.png =200x)
 ![](imgs/image017_with_dist_190417_020632/ours_fullres.png =200x)
   
-![](imgs/image023_with_dist_190417_020723/input_mask.png =200x)
+
 ![](imgs/image023_with_dist_190417_020723/input_ab.png =200x)
 ![](imgs/image023_with_dist_190417_020723/input_fullres.png =200x)
 ![](imgs/image023_with_dist_190417_020723/ours_fullres.png =200x)
   
-![](imgs/image023_with_dist_190417_020853/input_mask.png =200x)
+
 ![](imgs/image023_with_dist_190417_020853/input_ab.png =200x)
 ![](imgs/image023_with_dist_190417_020853/input_fullres.png =200x)
 ![](imgs/image023_with_dist_190417_020853/ours_fullres.png =200x)
