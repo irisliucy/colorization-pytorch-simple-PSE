@@ -25,15 +25,15 @@ python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_pat
 
 ### Some more examples
 
-<img src='cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
-<img src='cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
-<img src='cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
 <br>
 
 
-<img src='cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
-<img src='cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
-<img src='cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
+<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
 <br>
 
 cup_with_dist_190417_013901
