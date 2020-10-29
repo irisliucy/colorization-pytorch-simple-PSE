@@ -14,11 +14,11 @@ python run_model.py
 python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_path imgs/migrant_mother/im_mask.npy
 ```
 
-** Automatic results**
+**Automatic results**
 
 <img src='resources/example_auto.png' align="left">
 
-** User interactive results**
+**User interactive results**
 
 <img src='resources/example_inter.png' align="left">
 
@@ -27,14 +27,11 @@ python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_pat
 
 <img src='imgs/cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
 <img src='imgs/cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
-<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
-<br>
-
+<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>  
 
 <img src='imgs/cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
 <img src='imgs/cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
-<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
-<br>
+<img src='imgs/cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>  
 
 cup_with_dist_190417_013901
 image013_with_dist_190417_015719
