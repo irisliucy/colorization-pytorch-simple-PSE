@@ -114,7 +114,7 @@ in_ab_rgb_img = util.lab2rgb_clip(in_ab_lab_img)
 
 
 
-plt.figure(figsize=(18,6))
+fig = plt.figure(figsize=(18,6))
 plt.subplot(1,4,1)
 plt.imshow(in_mask[:,:,0],clim=(0,1),cmap='gray')
 plt.title('Input hint mask')
@@ -134,6 +134,10 @@ plt.subplot(1,4,4)
 plt.imshow(out_rgb)
 plt.title('Output')
 plt.axis('off')
+
+fig.tight_layout()
+
+plt.savefig('tmp.png')
 
 # plt.show()
 
@@ -158,7 +162,7 @@ out_class_point = out_class[0,:,h,w] # 529, probability distribution over discre
 
 # PLOT RESULTS
 # show queried point on original image
-plt.figure(figsize=(18,6))
+fig = plt.figure(figsize=(18,6))
 plt.subplot(1,4,1)
 plt.imshow(out_entropy.cpu().numpy()[0,0,:,:],clim=(0,5),cmap='hot')
 plt.plot(w,h,'wo', markersize=14)
@@ -186,5 +190,7 @@ plt.imshow(ab_rgbs,
 plt.xlabel('b')
 plt.ylabel('a')
 plt.title('ab colors (L=50)')
+
+fig.tight_layout()
 plt.show()
 
