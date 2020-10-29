@@ -14,9 +14,37 @@ python run_model.py
 python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_path imgs/migrant_mother/im_mask.npy
 ```
 
+** Automatic results**
+
 <img src='resources/example_auto.png' align="left">
 
+** User interactive results**
+
 <img src='resources/example_inter.png' align="left">
+
+
+### Some more examples
+
+<img src='cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
+<img src='cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
+<img src='cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
+<br>
+
+
+<img src='cup_with_dist_190417_013831/input_ab.png' align="left" width=200>
+<img src='cup_with_dist_190417_013831/input_fullres.png' align="left" width=200>
+<img src='cup_with_dist_190417_013831/ours_fullres.png' align="left" width=200>
+<br>
+
+cup_with_dist_190417_013901
+image013_with_dist_190417_015719
+image013_with_dist_190417_020208
+image015_with_dist_190417_020225
+image015_with_dist_190417_020612
+image017_with_dist_190417_020632
+image023_with_dist_190417_020723
+image023_with_dist_190417_020853
+migrant_mother
 
 
 ### DRN_D_22 model
