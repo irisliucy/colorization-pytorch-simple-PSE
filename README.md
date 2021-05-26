@@ -25,8 +25,6 @@ python run_model.py --hint_ab_path imgs/migrant_mother/im_ab.npy --hint_mask_pat
 
 ### Some more examples
 
-<!-- Hint mask | Color hint | Input | Output -->
-
 ![](imgs/cup_with_dist_190417_013831/input_mask.png =200x)
 ![](imgs/cup_with_dist_190417_013831/input_ab.png =200x)
 ![](imgs/cup_with_dist_190417_013831/input_fullres.png =200x)
