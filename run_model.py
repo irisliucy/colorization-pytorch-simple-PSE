@@ -30,9 +30,9 @@ parser.add_argument('--hw_class', type=float, default=(50,120), nargs='+', help=
 # constants
 parser.add_argument('--l_norm', type=float, default=100., help='L normalization')
 parser.add_argument('--l_cent', type=float, default=50., help='L center')
-parser.add_argument('--ab_norm', type=float, default=110., help='ab normalization')
+parser.add_argument('--ab_norm', type=float, default=110., help='ab normalization')  
 parser.add_argument('--mask_cent', type=float, default=0., help='hint mask centering')
-parser.add_argument('--HW_proc', type=float, default=(224,224), nargs='+', help='dimension to process image')
+parser.add_argument('--HW_proc', type=float, default=(270,180), nargs='+', help='dimension to process image')
 parser.add_argument('--A', type=int, default=23, help='number of bins')
 parser.add_argument('--ab_step', type=int, default=10., help='ab increments when discretizing')
 
@@ -44,12 +44,14 @@ H_proc, W_proc = opt.HW_proc
 if(opt.hint_ab_path is None):
 	in_ab = np.zeros((H_proc, W_proc, 2))
 else:
-	in_ab = np.load(opt.hint_ab_path).transpose((1,2,0)) # ./imgs/migrant_mother/im_ab.npy
+	# in_ab = np.load(opt.hint_ab_path).transpose((1,2,0)) # ./imgs/migrant_mother/im_ab.npy
+	in_ab = np.load(opt.hint_ab_path)
 
 if(opt.hint_mask_path is None):
 	in_mask = np.zeros((H_proc, W_proc, 1))
 else:
-	in_mask = 1.*np.load(opt.hint_mask_path).transpose((1,2,0)) # ./imgs/migrant_mother/im_mask.npy
+	# in_mask = 1.*np.load(opt.hint_mask_path).transpose((1,2,0)) # ./imgs/migrant_mother/im_mask.npy
+	in_mask = 1.*np.load(opt.hint_mask_path)
 
 if(opt.arch=='siggraph'):
 	import models.siggraph
@@ -108,7 +110,8 @@ out_rgb = util.lab2rgb_clip(out_lab)
 out_entropy = -torch.sum(out_class*torch.log(out_class),dim=1,keepdim=True)
 
 # for visualization
-in_ab_lab_flat = np.concatenate((in_mask*50, in_ab), axis=2)
+# in_ab_lab_flat = np.concatenate((in_mask*50, in_ab), axis=2)
+in_ab_lab_flat = np.concatenate((in_mask, in_ab), axis=2)
 in_ab_rgb_flat = util.lab2rgb_clip(in_ab_lab_flat)
 
 in_ab_lab_img = np.concatenate((img_rs_l, in_ab), axis=2)
@@ -123,17 +126,17 @@ plt.title('Input hint mask')
 plt.axis('off')
 
 plt.subplot(1,4,2)
-plt.imshow(in_ab_rgb_flat)
+plt.imshow(in_ab_rgb_flat[:,:,::-1])
 plt.title('Input hints')
 plt.axis('off')
 
 plt.subplot(1,4,3)
-plt.imshow(in_ab_rgb_img)
+plt.imshow(in_ab_rgb_img[:,:,::-1])
 plt.title('Input (grayscale + hints)')
 plt.axis('off')
 
 plt.subplot(1,4,4)
-plt.imshow(out_rgb)
+plt.imshow(out_rgb[:,:,::-1])
 plt.title('Output')
 plt.axis('off')
 

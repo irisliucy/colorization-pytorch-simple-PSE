@@ -15,7 +15,8 @@ def tens2np(in_tens):
 	return in_tens.cpu().numpy().transpose((2,3,1,0))[:,:,:,0]
 
 def lab2rgb_clip(in_lab):
-	return np.clip(color.lab2rgb(in_lab),0,1)
+	# return np.clip(color.lab2rgb(in_lab),0,1)
+	return np.uint8(np.clip(color.lab2rgb(in_lab),0,1)*255)
 
 
 def add_color_patch(in_ab,in_mask,ab=[0,0],hw=[128,128],P=5):
