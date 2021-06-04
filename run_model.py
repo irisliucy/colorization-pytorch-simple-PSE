@@ -32,7 +32,7 @@ parser.add_argument('--l_norm', type=float, default=100., help='L normalization'
 parser.add_argument('--l_cent', type=float, default=50., help='L center')
 parser.add_argument('--ab_norm', type=float, default=110., help='ab normalization')  
 parser.add_argument('--mask_cent', type=float, default=0., help='hint mask centering')
-parser.add_argument('--HW_proc', type=float, default=(270,180), nargs='+', help='dimension to process image')
+parser.add_argument('--HW_proc', type=int, default=(270,180), nargs='+', help='dimension to process image')
 parser.add_argument('--A', type=int, default=23, help='number of bins')
 parser.add_argument('--ab_step', type=int, default=10., help='ab increments when discretizing')
 
@@ -126,17 +126,17 @@ plt.title('Input hint mask')
 plt.axis('off')
 
 plt.subplot(1,4,2)
-plt.imshow(in_ab_rgb_flat[:,:,::-1])
+plt.imshow(in_ab_rgb_flat)
 plt.title('Input hints')
 plt.axis('off')
 
 plt.subplot(1,4,3)
-plt.imshow(in_ab_rgb_img[:,:,::-1])
+plt.imshow(in_ab_rgb_img)
 plt.title('Input (grayscale + hints)')
 plt.axis('off')
 
 plt.subplot(1,4,4)
-plt.imshow(out_rgb[:,:,::-1])
+plt.imshow(out_rgb)
 plt.title('Output')
 plt.axis('off')
 
