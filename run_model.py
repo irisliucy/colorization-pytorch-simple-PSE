@@ -21,6 +21,7 @@ parser.add_argument('--img_path', type=str, default='./imgs/migrant_mother.jpg',
 parser.add_argument('--model_path', type=str, default='./weights/caffemodel_mask01_rec.pth', help='model weights')
 parser.add_argument('--hint_ab_path', type=str, default=None, help='hints saved off as [2 x Hproc x Wproc]')
 parser.add_argument('--hint_mask_path', type=str, default=None, help='hint masked saved off as [2 x Hproc x Wproc]')
+parser.add_argument('--base_path', type=str, default='./', help='base path to save and load images')
 
 # classification point
 parser.add_argument('--hw_class', type=float, default=(50,120), nargs='+', help='point to look at for predicted distribution')
@@ -60,6 +61,7 @@ elif(opt.arch=='drn_d_22'):
 	import models.drnseg
 	colorizer = models.drnseg.DRNSeg(model_name='drn_d_22')
 
+base_path = opt.base_path
 print('Loading from [%s]'%opt.model_path)
 # embed()
 a = torch.load(opt.model_path)
@@ -110,8 +112,8 @@ out_rgb = util.lab2rgb_clip(out_lab)
 out_entropy = -torch.sum(out_class*torch.log(out_class),dim=1,keepdim=True)
 
 # for visualization
-# in_ab_lab_flat = np.concatenate((in_mask*50, in_ab), axis=2)
-in_ab_lab_flat = np.concatenate((in_mask, in_ab), axis=2)
+in_ab_lab_flat = np.concatenate((in_mask*50, in_ab), axis=2)
+# in_ab_lab_flat = np.concatenate((in_mask, in_ab), axis=2)
 in_ab_rgb_flat = util.lab2rgb_clip(in_ab_lab_flat)
 
 in_ab_lab_img = np.concatenate((img_rs_l, in_ab), axis=2)
@@ -139,10 +141,11 @@ plt.subplot(1,4,4)
 plt.imshow(out_rgb)
 plt.title('Output')
 plt.axis('off')
+cv2.imwrite(base_path + 'colorized_output.png', out_rgb[:,:,::-1])
 
 fig.tight_layout()
 
-plt.savefig('tmp.png')
+plt.savefig(base_path + 'tmp.png')
 
 # plt.show()
 
